@@ -4,20 +4,37 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "bun scripts/dev.ts",
+    "dev:frontend": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "convert": "bun scripts/convert.ts",
-    "serve:tiles": "bun scripts/server.ts"
+    "serve:tiles": "bun scripts/server.ts",
+    "validate-s57": "bun scripts/validate-s57.ts",
+    "optimize": "bun scripts/optimize.ts",
+    "validate-tiles": "bun scripts/validate-tiles.ts",
+    "test": "bun test",
+    "test:unit": "bun test --filter '*unit*'",
+    "test:integration": "bun test --filter '*integration*'",
+    "test:performance": "bun test --filter '*performance*'",
+    "docs": "typedoc"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
+    "@types/geojson": "^7946.0.14",
+    "@types/node": "^24.0.0",
     "express": "^5.1.0",
     "sql.js": "^1.13.0",
     "typescript": "~5.8.3",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "typedoc": "^0.28.5",
+    "@types/bun": "latest"
   },
   "dependencies": {
-    "mapbox-gl": "^3.12.0"
+    "mapbox-gl": "^3.12.0",
+    "@turf/turf": "^7.0.0",
+    "@turf/simplify": "^7.0.0",
+    "@turf/bbox": "^7.0.0",
+    "@turf/buffer": "^7.0.0"
   }
 }
